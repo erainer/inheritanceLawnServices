@@ -15,7 +15,9 @@ public class Commercial extends Customer {
         this.commercialRate = 5.00;        //for every 1000sqft
         this.multipleProperties = false;
     }
-    //calculates the total cost and displays information
+    /**
+     * calculates the total cost and displays information
+     */
     public void calulate(boolean multipleProperties, String name, String phone, String address, double footage){
         double costByCommericalRate = 0.0;
         double costBySqFt = 0.0;
@@ -26,14 +28,18 @@ public class Commercial extends Customer {
         System.out.println(name);
 
         extraSqFt = squareFootage % 1000;
-        //calculates the extra footage
+        /**
+         * calculates the extra footage
+         */
         if(extraSqFt > 0){
             costBySqFt = commercialRate / 1000;
             extraSqFtCost = extraSqFt * costBySqFt;
         }
         costByCommericalRate = (squareFootage/1000)*commercialRate;
         totalCost = costByCommericalRate + extraSqFtCost;
-        //calculates the discount into the total cost
+        /**
+         * calculates the discount into the total cost
+         */
         if(!multipleProperties){
             discount = .10 * totalCost;
             totalCost = discount - totalCost;

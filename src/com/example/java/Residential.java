@@ -12,7 +12,9 @@ public class Residential extends Customer {
         this.residentialRate = 6.0;
         this.senior = true;
     }
-    //calculates the total cost of the lawn service for residential customers
+    /**
+     * calculates the total cost of the lawn service for residential customers
+     */
     public void calulate(boolean senior, String name, String phone, String address, double footage){
         double costByCommericalRate = 0.0;
         double costBySqFt = 0.0;
@@ -22,14 +24,18 @@ public class Residential extends Customer {
         double totalCost = 0.0;
 
         extraSqFt = squareFootage % 1000;
-        //calculates the square footage
+        /**
+         * calculates the square footage
+         */
         if(extraSqFt > 0){
             costBySqFt = residentialRate / 1000;
             extraSqFtCost = extraSqFt * costBySqFt;
         }
         costByCommericalRate = (squareFootage/1000)*residentialRate;
         totalCost = costByCommericalRate + extraSqFtCost;
-        //calculates the senior discount
+        /**
+         * calculates the senior discount
+         */
         if(senior){
             discount = .15 * totalCost;
             totalCost = discount - totalCost;

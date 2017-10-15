@@ -7,9 +7,15 @@ public class Main {
         int choice = 0;
         int answer;
         boolean senior = false;
-        //validates the users menu choice until they choose exit.
+        /**
+         * This program is to <b>calculates</b> how much its goin to cost for a <i>lawn service</i>.
+         * //validates the users menu choice until they choose exit.
+         */
+
         do {
-            //get users input
+            /**
+             * gets user input
+             */
             System.out.println("Welcome to Emily's Lawn Service");
             System.out.println("1. Residential Customer\n2. Commercial Customer\n3. Exit");
             choice = scanner.nextInt();
@@ -23,7 +29,9 @@ public class Main {
             System.out.println("How many square feet is your lawn?");
             double sqft = scanner.nextDouble();
 
-            //determines the choice made from menu
+            /**
+             * determines the choice made from the menu
+             */
             if(choice == 1) {
                 System.out.println("What is your age?");
                 answer = scanner.nextInt();
@@ -40,9 +48,13 @@ public class Main {
                     System.out.println("What is your age?");
                     answer = scanner.nextInt();
                 }
-                //creates a residential object
+                /**
+                 * creates residential object
+                 */
                 Residential res = new Residential(senior, name, phone, address, sqft);
-                //calls a function from residential class
+                /**
+                 * calls the calculation function in the residential class
+                 */
                 res.calulate(senior, name, phone, address, sqft);
             }
             else if(choice == 2){
@@ -52,12 +64,18 @@ public class Main {
                 System.out.println("How many properties do you have?");
                 int many = scanner.nextInt();
                 boolean multiple = false;
-                //determines multiple properties discount
+                /**
+                 * determines miltiple properties discount
+                 */
                 if(many > 0)
                     multiple = true;
-                //creates a commerical object
+                /**
+                 * creates a commercial object
+                 */
                 Commercial com = new Commercial(pName, multiple, name, phone, address, sqft);
-                //calls a function from the commercial class
+                /**
+                 * calls the calculation function from commercial class
+                 */
                 com.calulate(multiple, name, phone, address, sqft);
             }
         }while(choice != 3);
