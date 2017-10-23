@@ -34,7 +34,7 @@ public class Residential extends Customer {
         costByCommericalRate = (squareFootage/1000)*residentialRate;
         totalCost = costByCommericalRate + extraSqFtCost;
         /**
-         * calculates the senior discount
+         * determines the senior discount
          */
         if(senior){
             discount = .15 * totalCost;

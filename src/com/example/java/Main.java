@@ -1,21 +1,25 @@
 package com.example.java;
 import java.util.Scanner;
+
+/**
+ * This program is to <b>calculates</b> how much its goin to cost for a <i>lawn service</i>.
+ * validates the users menu choice until they choose exit.
+ */
 public class Main {
 
+    /**
+     * The main method
+     * @param args an array of string values
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
         int answer;
         boolean senior = false;
-        /**
-         * This program is to <b>calculates</b> how much its goin to cost for a <i>lawn service</i>.
-         * //validates the users menu choice until they choose exit.
-         */
+
 
         do {
-            /**
-             * gets user input
-             */
+             //gets user input
             System.out.println("Welcome to Emily's Lawn Service");
             System.out.println("1. Residential Customer\n2. Commercial Customer\n3. Exit");
             choice = scanner.nextInt();
